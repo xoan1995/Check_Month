@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Witch-case</title>
+</head>
+<body>
+<p><strong>Mô tả</strong> <br>
+    Viết một ứng dụng cho phép tính được số ngày trong một tháng <br>
+    Mô tả tính năng: <br>
+
+    Nhập vào một số là số thứ tự của tháng trong năm <br>
+    Nhấn nút "Tinh số ngày" thì sẽ hiển thị số ngày của tháng đó</p>
+<input type="text" id="inputMonth">
+<button onclick="checkMonth()">Tính số ngày</button>
+<p id="showDay"></p>
+<script>
+
+    function checkMonth() {
+        const JANUARY = 1;
+        const FEBRUARY = 2;
+        const MARCH = 3;
+        const APRIL = 4;
+        const MAY = 5;
+        const JUNE = 6;
+        const JULY = 7;
+        const AUGUST = 8;
+        const SEPTEMBER = 9;
+        const OCTOBER = 10;
+        const NOVEMBER = 11;
+        const DECEMBER = 12;
+        let month = document.getElementById('inputMonth').value;
+        switch (month) {
+            case '1':
+            case '3':
+            case '5':
+            case '7':
+            case '8':
+            case '10':
+            case '12':
+                document.getElementById("showDay").innerHTML = 'Month ' + month + ' have 31 day';
+                break;
+
+            case '4':
+            case '6':
+            case '9':
+            case '11':
+                document.getElementById("showDay").innerHTML = 'Month ' + month + ' have 30 day';
+                break;
+            case '2':
+                document.getElementById("showDay").innerHTML = 'Month ' + month + ' have 28 or 29 day';
+                break;
+            default:
+                document.getElementById("showDay").innerHTML='Enter a month repeat';
+        }
+    }
+</script>
+</body>
+
+</html>
